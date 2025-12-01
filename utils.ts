@@ -12,7 +12,7 @@ async function readInput() {
   }
 }
 
-export function run(fn: (input: string) => Promise<void>) {
+export function run(fn: (input: string) => Promise<void> | void) {
   readInput()
     .then(input => fn(input))
     .catch(err => {
