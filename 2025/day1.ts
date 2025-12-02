@@ -44,12 +44,14 @@ function part2(moves: number[]) {
 }
 
 run((input: string) => {
+  console.time('execution')
   const moves = input
     .split('\n')
     .filter(Boolean)
     .map((line) => Number(line.slice(1)) * (line[0] === 'L' ? -1 : 1))
   const result1 = part1(moves)
   const result2 = part2(moves)
+  console.timeEnd('execution')
   console.log('part1:', result1)
   console.log('part2:', result2)
 })
