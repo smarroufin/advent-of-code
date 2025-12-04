@@ -30,14 +30,12 @@ function getBankJoltageNoLimit({ bank, bankIndex, maxValue, baseValue, level }: 
 }
 
 run((input: string) => {
-  console.time('execution')
   const banks: number[][] = input
     .split('\n')
     .filter(Boolean)
     .map(bank => bank.split('').map(char => parseInt(char)))
   const totalJoltage = banks.reduce((acc, bank) => acc + getBankJoltage(bank), 0)
   const totalJoltageNoLimit = banks.reduce((acc, bank) => acc + getBankJoltageNoLimit({ bank, bankIndex: 0, maxValue: 0, baseValue: 0, level: 12 }), 0)
-  console.timeEnd('execution')
   console.log('part1:', totalJoltage)
   console.log('part2:', totalJoltageNoLimit)
 })

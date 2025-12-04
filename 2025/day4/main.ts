@@ -19,7 +19,6 @@ function isRollRemovable(grid: string[], x: number, y: number) {
 }
 
 run((input: string) => {
-  console.time('execution')
   const grid = input.split('\n')
   let removableRolls = 0
   let removedRolls = 0
@@ -49,7 +48,6 @@ run((input: string) => {
       }
     }
   } while (removedARoll)
-  console.timeEnd('execution')
   console.log('part1:', removableRolls)
   console.log('part2:', removedRolls)
 })

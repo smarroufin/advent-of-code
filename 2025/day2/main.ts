@@ -27,7 +27,6 @@ function isMultiplePattern(n: number) {
 }
 
 run((input: string) => {
-  console.time('execution')
   const ranges: Range[] = input
     .split(',')
     .map(range => {
@@ -45,7 +44,6 @@ run((input: string) => {
   }
   const pairPatternSum = pairPatternIds.reduce((acc, id) => acc + id, 0)
   const multiplePatternSum = multiplePatternIds.reduce((acc, id) => acc + id, 0)
-  console.timeEnd('execution')
   console.log('part1:', pairPatternSum)
   console.log('part2:', multiplePatternSum)
 })

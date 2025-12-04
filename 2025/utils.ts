@@ -14,7 +14,11 @@ async function readInput() {
 
 export function run(fn: (input: string) => Promise<void> | void) {
   readInput()
-    .then(input => fn(input))
+    .then(async (input) => {
+      console.time('execution')
+      await fn(input)
+      console.timeEnd('execution')
+    })
     .catch(err => {
       console.error(err.message)
       process.exit(1)
